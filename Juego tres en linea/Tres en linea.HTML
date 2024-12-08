@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tres en Línea</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tres en Línea</h1>
+        
+        <div class="game-options">
+            <select id="gameMode">
+                <option value="vs-cpu">vs CPU</option>
+                <option value="vs-player">vs Jugador</option>
+            </select>
+            
+            <select id="difficulty">
+                <option value="easy">Fácil 😊</option>
+                <option value="normal">Normal 🤔</option>
+                <option value="hard">Difícil 😈</option>
+            </select>
+            
+            <button onclick="resetGame()">Nuevo Juego</button>
+        </div>
+
+        <div class="score">
+            <div>Jugador X: <span id="scoreX">0</span></div>
+            <div>Jugador O: <span id="scoreO">0</span></div>
+        </div>
+
+        <div class="board" id="board">
+            <div class="cell" onclick="makeMove(0)"></div>
+            <div class="cell" onclick="makeMove(1)"></div>
+            <div class="cell" onclick="makeMove(2)"></div>
+            <div class="cell" onclick="makeMove(3)"></div>
+            <div class="cell" onclick="makeMove(4)"></div>
+            <div class="cell" onclick="makeMove(5)"></div>
+            <div class="cell" onclick="makeMove(6)"></div>
+            <div class="cell" onclick="makeMove(7)"></div>
+            <div class="cell" onclick="makeMove(8)"></div>
+        </div>
+
+        <div id="winnerMessage" class="winner-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
