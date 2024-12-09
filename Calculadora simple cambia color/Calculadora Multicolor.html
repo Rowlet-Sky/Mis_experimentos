@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" class="modo-oscuro">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Simple</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body>
+    <div class="contenedor-calculadora">
+        <label class="switch">
+            <input type="checkbox" onclick="cambiarModo()">
+            <span class="slider"></span>
+        </label>
+        <div class="calculadora">
+            <input type="text" id="pantalla" readonly>
+            <div class="botones">
+                <button onclick="eliminarDigito()">DEL</button>
+                <button onclick="agregarNumero('7')">7</button>
+                <button onclick="agregarNumero('8')">8</button>
+                <button onclick="agregarNumero('9')">9</button>
+                <button class="operacion" onclick="agregarOperacion('/')">÷</button>
+                <button class="operacion" onclick="agregarOperacion(',')">,</button>
+                
+                <button onclick="agregarNumero('4')">4</button>
+                <button onclick="agregarNumero('5')">5</button>
+                <button onclick="agregarNumero('6')">6</button>
+                <button class="operacion" onclick="agregarOperacion('*')">x</button>
+                <button class="operacion" onclick="agregarOperacion('(')">(</button>
+                
+                <button onclick="agregarNumero('1')">1</button>
+                <button onclick="agregarNumero('2')">2</button>
+                <button onclick="agregarNumero('3')">3</button>
+                <button class="operacion" onclick="agregarOperacion('-')">-</button>
+                <button class="operacion" onclick="agregarOperacion(')')">)</button>
+                
+                <button onclick="agregarNumero('0')">0</button>
+                <button onclick="agregarNumero('.')">.</button>
+                <button onclick="calcular()">=</button>
+                <button class="operacion" onclick="agregarOperacion('+')">+</button>
+                
+                <button onclick="limpiar()" class="ac">AC</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function agregarNumero(numero) {
+            document.getElementById('pantalla').value += numero;
+        }
+
+        function eliminarDigito() {
+            const pantalla = document.getElementById('pantalla');
+            pantalla.value = pantalla.value.slice(0, -1);
+        }
+
+        function agregarOperacion(operacion) {
+            document.getElementById('pantalla').value += operacion;
+        }
+
+        function calcular() {
+            try {
+                document.getElementById('pantalla').value = eval(document.getElementById('pantalla').value);
+            } catch {
+                document.getElementById('pantalla').value = 'Error';
+            }
+        }
+
+        function limpiar() {
+            document.getElementById('pantalla').value = '';
+        }
+
+        function cambiarModo() {
+            const html = document.documentElement;
+            html.classList.toggle('modo-oscuro');
+            html.classList.toggle('modo-claro');
+        }
+    </script>
+</body>
+</html>
