@@ -1,7 +1,7 @@
 const words = [
     // Tecnología
     'JAVASCRIPT', 'DESARROLLO', 'PROGRAMACION', 'COMPUTADORA', 'TECNOLOGIA', 'INTERNET', 'VIDEOJUEGO',
-    'APLICACION', 'SERVIDOR', 'NAVEGADOR', 'ALGORITMO', 'DATABASE', 'FRAMEWORK', 'BIBLIOTECA',
+    'APLICACION', 'SERVIDOR', 'NAVEGADOR', 'DATOS',
     // Naturaleza
     'MONTAÑA', 'OCEANO', 'BOSQUE', 'DESIERTO', 'CASCADA', 'VOLCAN', 'GLACIAR', 'SELVA', 'LAGUNA',
     // Animales
@@ -15,7 +15,7 @@ const words = [
     // Música
     'GUITARRA', 'BATERIA', 'VIOLIN', 'TROMPETA', 'SAXOFON', 'ORQUESTA', 'MELODIA',
     // Comida
-    'CHOCOLATE', 'ENSALADA', 'HAMBURGUESA', 'ESPAGUETI', 'ZANAHORIA', 'MANDARINA'
+    'CHOCOLATE', 'ENSALADA', 'HAMBURGUESA', 'ESPAGUETI', 'ZANAHORIA', 'NARANJA'
 ];
 
 // Estados del ahorcado
@@ -106,7 +106,7 @@ function updateDisplay() {
         document.getElementById('message').textContent = '¡Felicidades! ¡Has ganado! 🎉';
         gameOver = true;
     } else if (wrongGuesses >= 6) {
-        document.getElementById('message').textContent = `¡Game Over! La palabra era: ${word} 😔`;
+        document.getElementById('message').textContent = `¡Perdiste! La palabra era: ${word} 😔`;
         gameOver = true;
     } else {
         document.getElementById('message').textContent = '';
